@@ -1,0 +1,33 @@
+{
+	"name": "DestinationDataset_7t6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"folderPath": "Cloudsales",
+				"fileSystem": "hack"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

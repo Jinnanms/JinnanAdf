@@ -1,0 +1,56 @@
+{
+	"name": "pipelinemovies",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "CosmosDbSqlApiSource",
+						"preferredRegions": []
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "CosmosDbSqlApiCollection1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedTextMovies",
+						"type": "DatasetReference",
+						"parameters": {
+							"cl_name": "movies"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-08-10T13:43:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

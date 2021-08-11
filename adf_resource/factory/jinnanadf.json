@@ -1,0 +1,9 @@
+{
+	"name": "jinnanadf",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a49714b0-e58e-4c8f-beb0-6f0657cf6a2d",
+		"tenantId": "6cc05d1c-6862-4b27-8dfe-89399a5f217f"
+	}
+}

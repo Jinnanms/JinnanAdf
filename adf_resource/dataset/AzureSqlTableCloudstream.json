@@ -1,0 +1,25 @@
+{
+	"name": "AzureSqlTableCloudstream",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseCloudStream",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cs_table": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().cs_table",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
